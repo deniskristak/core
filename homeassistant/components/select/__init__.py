@@ -128,6 +128,8 @@ class SelectEntityDescription(EntityDescription):
 class SelectEntity(Entity):
     """Representation of a Select entity."""
 
+    _component_unstored_attributes = frozenset({ATTR_OPTIONS})
+
     entity_description: SelectEntityDescription
     _attr_current_option: str | None
     _attr_options: list[str]

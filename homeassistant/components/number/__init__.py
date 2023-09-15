@@ -157,6 +157,10 @@ def floor_decimal(value: float, precision: float = 0) -> float:
 class NumberEntity(Entity):
     """Representation of a Number entity."""
 
+    _component_unstored_attributes = frozenset(
+        {ATTR_MIN, ATTR_MAX, ATTR_STEP, ATTR_MODE}
+    )
+
     entity_description: NumberEntityDescription
     _attr_device_class: NumberDeviceClass | None
     _attr_max_value: None

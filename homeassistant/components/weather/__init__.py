@@ -264,6 +264,8 @@ class PostInit(metaclass=PostInitMeta):
 class WeatherEntity(Entity, PostInit):
     """ABC for weather data."""
 
+    _component_unstored_attributes = frozenset({ATTR_FORECAST})
+
     entity_description: WeatherEntityDescription
     _attr_condition: str | None = None
     # _attr_forecast is deprecated, implement async_forecast_daily,
